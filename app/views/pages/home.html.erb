@@ -1,0 +1,39 @@
+<div class="row-1">
+  <h1>Run during 6 minutes at your max level and type your distance in meters below:</h1>
+   <div class="col-12 col-lg-8">
+      <%= simple_form_for([@user]) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :cooper_distance, placeholder: "Run a 6 minutes as fast as possible and type the result here!" %>
+          <%= f.input :age, placeholder: "How old are you?" %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Submit" %>
+        </div>
+      <% end %>
+    </div>
+</div>
+<div class="row-2">
+  <h2>Your VMA is <%= @vma %> km/h</h2>
+  <h2>Your Vo2max is <%= @vo2max.round(2) %> ml/kg/km</h2>
+  <h2>Your FCM is <%= @fcm.to_f %> bpm</h2>
+</div>
+
+<div class="row-1">
+   <div class="col-12 col-lg-8">
+      <%= simple_form_for([@user]) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :percentage_speed, placeholder: "type your percent of running speed" %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Submit" %>
+        </div>
+      <% end %>
+    </div>
+</div>
+<div class="row-2">
+  <h2>Your running speed at <%= @percentage_speed %>% is <%= @running_speed.round(2) %> km/h</h2>
+  <h2>Your FCM speed is <%= @fcm_speed.round(4) %> bpm</h2>
+  <h2>Your running speed minute is <%= @minute_speed.round(2) %> min/km</h2>
+</div>
